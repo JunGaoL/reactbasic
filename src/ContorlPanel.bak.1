@@ -1,0 +1,23 @@
+import React, {Component} from 'react';
+import Counter from './Counter';
+
+const style={
+    margin: '20px'
+}
+
+class ControlPanel extends Component{
+    render(){
+        console.log('enter ControlPanel render')
+        return(
+            <div style={style}>
+                <Counter caption='first' />
+                <Counter caption='second' initValue={10} />
+                <Counter caption='third' initValue={20} />
+                <button onClick = {() => this.forceUpdate()}>
+                    Click Me to /re-render!
+                </button>
+            </div>
+        );
+    }
+}
+export default ControlPanel;
